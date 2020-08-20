@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-3 col-sm-4 col-xm-4 d-flex justify-content-center">
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          Datos Empleado
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Nombre</h5>
+          <p class="card-text">{_NOMBRE_}</p>
+          <h5 class="card-title">NIT</h5>
+          <p class="card-text">{_NIT_}</p>
+          <h5 class="card-title">Salario</h5>
+          <p class="card-text">{_SALARIO_}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 col-lg-8 col-md-9 col-sm-8 col-xm-8 d-flex justify-content-center">
+      <div class="card text-white bg-info mb-3">
+        <div class="card-header">
+          Ingresos Mensuales de {_MES_}
+        </div>
+        <div class="card-body">
+          <form id="" action="./src/app/registrarIngresosMensuales.php" method="post" accept-charset="utf-8">
+            <div class="form-group">
+              <label for="mes">Mes</label>
+              <input class="form-control" type="text" name="mes" id="mes" value="{_MES_}" />
+            </div>
+            <div class="form-group">
+              <label for="salario">Salario</label>
+              <input class="form-control" type="number" step="0.01" min="300" name="salario" id="salario" value="{_SALARIO_}" />
+            </div>
+            <div class="form-group">
+              <label for="comision">Comision</label>
+              <input class="form-control" type="number" step="0.01" name="comision" id="comision" value="0.00" />
+            </div>
+            
+            <input class="btn btn-warning" type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar" />
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="separator"></div>
+
