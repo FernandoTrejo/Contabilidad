@@ -6,7 +6,14 @@ class ISSS{
   const ISSS_MAXIMO = 30;
   
   public static function calcular($ingresos){
-     return ($ingresos > self::LIM_ISSS_DEDUCCION) ? self::ISSS_MAXIMO : round($ingresos * self::PORCENTAJE,2);
+    $isss = 0;
+    if($ingresos > self::LIM_ISSS_DEDUCCION){
+      $isss = self::ISSS_MAXIMO;
+    }else{
+      $isss = $ingresos * self::PORCENTAJE;
+    }
+     
+     return round($isss,2);
   }
 }
   

@@ -2,6 +2,7 @@
 
 session_start();
 /*******Archivos necesarios**********/
+require_once("../core/sessions.php");
 require_once('../core/logic/Deducciones/ISR/isr.php');
 /*******Verificaciones iniciales**********/
 if(!isset($_POST["btnDeclarar"])){
@@ -17,7 +18,7 @@ if(!isset($_SESSION["declaracion_renta"])){
 
 /*******Asignaciones**********/
 
-$declaracion = $_SESSION["declaracion_renta"];
+$declaracion = getDeclaracionSession();
 
 $monto_gravado = $_POST["montoGravado"];
 $gastos_medicos = $_POST["gastosMedicos"];
@@ -36,8 +37,10 @@ $declaracion = [
   "isr_ordinario" => $isr_ordinario
 ];
 
-$_SESSION["declaracion_renta"] = $declaracion;
+setDeclaracionSession($declaracion);
 
+
+//retornar a la pagina
 header("Location: ../../?pg=declaracion");
 
 

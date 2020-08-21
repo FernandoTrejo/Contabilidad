@@ -2,6 +2,7 @@
 
 session_start();
 /*******Archivos necesarios**********/
+require_once("../core/sessions.php");
 require_once('../core/logic/Deducciones/deducciones.php'); 
 
 /*******Verificaciones iniciales**********/
@@ -15,8 +16,8 @@ if(!isset($_SESSION["empleado"])){
   exit();
 }
 
-if(!isset($_SESSION["indiceMes"])){
-  print("no hay indice de mes");
+if(!isset($_SESSION["tiempo"])){
+  print("no hay tiempo");
   exit();
 }
 
@@ -27,9 +28,9 @@ if(!isset($_SESSION["planilla_empleado"])){
 
 /*******Asignaciones**********/
 
-$empleado = $_SESSION["empleado"];
-$planilla_empleado = $_SESSION["planilla_empleado"];
-$indiceMes = $_SESSION["indiceMes"];
+$empleado = getEmpleadoSession();
+$planilla_empleado = getPlanillaSession();
+$tiempo = getTiempoSession();
 
 $salario = $_POST["salario"];
 $comision = $_POST["comision"];
@@ -54,10 +55,12 @@ $planilla_empleado[$mes] = [
   "isr" => $deducciones["isr"]
 ];
 
-$indiceMes+=1;
+$tiempo["indice_mes"] += 1;
 
-$_SESSION["empleado"] = $empleado;
-$_SESSION["planilla_empleado"] = $planilla_empleado;
-$_SESSION["indiceMes"] = $indiceMes;
+setEmpleadoSession($empleado);
+setPlanillaSession($planilla_empleado);
+setTiempoSession($tiempo);
 
+
+//retornar a la pagina
 header("Location: ../../?pg=ingresos");

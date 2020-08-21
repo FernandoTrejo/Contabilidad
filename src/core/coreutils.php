@@ -30,10 +30,12 @@ function sum_array_columns($array){
   if(count($array)>0){
   foreach ($array as $key=>$value){
     foreach ($value as $k=>$v) {
-      $new_array[$k] += $v; 
+      $new_array[$k] += round($v,2); 
     }
   }
   }
+  
+  
   
   $res = ["Totales" => $new_array]; 
   return $res;

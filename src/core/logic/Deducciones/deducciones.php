@@ -5,7 +5,7 @@ require_once('../core/logic/Deducciones/isss.php');
 require_once('../core/logic/Deducciones/ISR/isr.php');
 
 function calcular_deducciones($ingresos){
-  //retornar un objeto con las deducciones corresoondientes y la renta
+  //retornar un objeto con las deducciones correspondientes y la renta
   $deduccion_isss = ISSS::calcular($ingresos);
   $deduccion_afp = AFP::calcular($ingresos);
   

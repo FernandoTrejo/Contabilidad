@@ -4,10 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planilla</title>
+    <title>Constancia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <style type="text/css" media="all">
+      @page{ 
+        margin: 0px; 
+      }
+      body { margin: 0px; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,11 +20,10 @@
         <div class="jumbotron border border-secondary">
             <h4 class="text-center" style="font-weight:700;">SOCIEDAD X, S.A. DE C.V.</h4>
             <br>
-            <p class="lead text-justify">El infrascrito agente de retención hace constar que Rivas Pereira, Elisa
-                Abigail con NIT
-                000-000-00 en su calidad de empleado en este empresa, devengó durante el periodo comprendido entre el
-                01/01/2019 al
-                31/12/2019, lo siguiente:
+            <p class="lead text-justify">El infrascrito agente de retención hace constar que {_NOMBRE_} con NIT
+                {_NIT_} en su calidad de empleado en este empresa, devengó durante el periodo comprendido entre el
+                {_FECHA_INICIO_} al
+                {_FECHA_FIN_}, lo siguiente:
             </p>
 
             <table class="table table-bordered lead">
@@ -30,30 +34,30 @@
                     </tr>
                     <tr>
                         <td colspan="3">Ingresos gravados/devengado</td>
-                        <td>$ 18,225.00</td>
+                        <td>${_ING_GRAVADOS_}</td>
                     </tr>
                     <tr>
                         <td colspan="3">Cotización AFP</td>
-                        <td>$ 0.00</td>
+                        <td>${_AFP_}</td>
                     </tr>
                     <tr>
                         <td colspan="3">Cotización ISSS</td>
-                        <td>$ 0.00</td>
+                        <td>${_ISSS_}</td>
                     </tr>
                     <tr>
                         <td colspan="3">Monto Gravado</td>
-                        <td>$ 0.00</td>
+                        <td>${_MONTO_GRAVADO_}</td>
                     </tr>
                     <tr>
                         <td colspan="3">Impuesto sobre la renta</td>
-                        <td>$ 0.00</td>
+                        <td>${_ISR_}</td>
                     </tr>
                 </tbody>
             </table>
             <p class="lead text-justify">Se extiende la presente en la ciudad de San Salvador el 29 de Enero del 2020
             </p>
             <br> <br> <br>
-            <p class="lead text-center"> Julieta Ramirez</p>
+            <p class="lead text-center"> Christian Flores</p>
             <hr width="300px">
             <p class="lead text-center">Centro de Servicios de Recursos Humanos
             </p>
