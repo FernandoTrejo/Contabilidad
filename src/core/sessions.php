@@ -34,6 +34,10 @@ if(!isset($_SESSION["declaracion_renta"])){
   ];
 }
 
+if(!isset($_SESSION["constancia_pdf"])){
+  $_SESSION["constancia_pdf"] = "";
+}
+
 function getEmpleadoSession(){
   return $_SESSION["empleado"];
 }
@@ -48,6 +52,10 @@ function getTiempoSession(){
 
 function getDeclaracionSession(){
   return $_SESSION["declaracion_renta"];
+}
+
+function getConstanciaPdfSession(){
+  return $_SESSION["constancia_pdf"];
 }
 
 //setters
@@ -66,4 +74,8 @@ function setTiempoSession($tiempo){
 
 function setDeclaracionSession($declaracion){
   $_SESSION["declaracion_renta"] = $declaracion;
+}
+
+function setConstanciaPdfSession($constancia){
+  $_SESSION["constancia_pdf"] = $constancia;
 }

@@ -34,6 +34,7 @@ function getDictionary(){
   return  [
     "_TITLE_" => "Declaracion de la renta",
     "_HOME_ACTIVE_" => "",
+    "_CONFIG_ACTIVE_" => "",
     "_INGRESOS_ACTIVE_" => "",
     "_DECLARACION_ACTIVE_" => "active",
     "_CONTENT_" => $page

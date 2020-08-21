@@ -1,33 +1,9 @@
 <?php
 
-// reference the Dompdf namespace
-require_once('./src/libs/dompdf/autoload.inc.php');
-use Dompdf\Dompdf;
-
-$empleado = getEmpleadoSession();
-$nombre_pdf = $empleado["apellidos"] . "-" . $empleado["nombre"] . "-Constancia-Pago.pdf";
-
 $dictionary_page = get_dictionary_page();
-$page_rendered = render('./src/static/templates/constancia.html',$dictionary_page);
+$page = render('./src/static/templates/constancia.html',$dictionary_page);
 
-create_pdf($page_rendered,$nombre_pdf);
-
-header('Location: ?pg=ingresos');
-
-
-
-function create_pdf($file,$name){
-  // instantiate and use the dompdf class
-  $dompdf = new Dompdf();
-  
-  $dompdf->loadHtml($file);
-  // (Optional) Setup the paper size and orientation
-  $dompdf->setPaper('letter', 'portrait');
-  // Render the HTML as PDF
-  $dompdf->render();
-  // Output the generated PDF to Browser
-  $dompdf->stream($name);
-}
+setConstanciaPdfSession($page);
 
 function get_dictionary_page(){
   $planilla_empleado = getPlanillaSession();
@@ -47,5 +23,17 @@ function get_dictionary_page(){
     "_ISSS_" => $totals["isss"],
     "_MONTO_GRAVADO_" => $totals["rem_gravada"],
     "_ISR_" => $totals["isr"]
+  ];
+}
+
+function getDictionary(){
+  global $page;
+  return [
+    "_TITLE_" => "Constancia",
+    "_HOME_ACTIVE_" => "active",
+    "_CONFIG_ACTIVE_" => "active",
+    "_INGRESOS_ACTIVE_" => "active",
+    "_DECLARACION_ACTIVE_" => "active",
+    "_CONTENT_" => $page . render("./src/static/html/constancia.html")
   ];
 }

@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-5 col-lg col-md d-flex justify-content-center">
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          Datos Empleado
+        </div>
+        <div class="card-body">
+          <form action="src/app/editarEmpleado.php" method="post">
+          <h5 class="card-title">Nombre</h5>
+          <div class="form-group">
+            <input class="form-control" type="text" name="nombreEmpleado" id="" value="{_NOMBRE_}" />
+          </div>
+          
+          <h5 class="card-title">Apellidos</h5>
+          <div class="form-group">
+            <input class="form-control" type="text" name="apellidosEmpleado" id="" value="{_APELLIDOS_}" />
+          </div>
+          
+          <h5 class="card-title">NIT</h5>
+          <div class="form-group">
+            <input class="form-control" type="text" name="nitEmpleado" id="nitEmpleado" value="{_NIT_}" />
+          </div>
+          <h5 class="card-title">Salario</h5>
+          <div class="form-group">
+            <input class="form-control" type="text" name="salarioEmpleado" id="salarioEmpleado" value="{_SALARIO_}" />
+          </div>
+         
+          
+          <button class="btn btn-info" name="btnEditEmpleado" type="submit">
+            <i class="fa fa-edit" aria-hidden="true"></i> Guardar Modicación
+          </button>
+         
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xl-5 col-lg col-md d-flex justify-content-center">
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          Fechas del ejercicio
+        </div>
+        <div class="card-body">
+          <form action="src/app/editarTiempo.php" method="post">
+          <h5 class="card-title">Fecha inicio</h5>
+          <div class="form-group">
+            <input class="form-control" type="text" name="fechaInicio" id="fechaInicio" value="{_FECHA_INICIO_}" />
+          </div>
+          
+          <h5 class="card-title">Fecha fin</h5>
+          <div class="form-group">
+            <input class="form-control" type="text" name="fechaFin" id="fechaFin" value="{_FECHA_FIN_}" />
+          </div>
+          
+          <button class="btn btn-info" name="btnEditTiempo" type="submit">
+            <i class="fa fa-edit" aria-hidden="true"></i> Guardar Modicación
+          </button>
+         
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

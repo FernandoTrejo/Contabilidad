@@ -34,6 +34,7 @@ function getDictionary(){
   global $page;
   return [
     "_TITLE_" => "Ingresos Mensuales",
+    "_CONFIG_ACTIVE_" => "",
     "_HOME_ACTIVE_" => "",
     "_INGRESOS_ACTIVE_" => "active",
     "_DECLARACION_ACTIVE_" => "",
